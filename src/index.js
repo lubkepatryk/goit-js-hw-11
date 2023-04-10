@@ -50,12 +50,11 @@ function onSearchForm(e) {
 
 function onLoadMoreBtn() {
   page += 1;
-  // SimpleLightbox.destroy();
 
   fetchImages(query, page, per_page)
     .then(({ data }) => {
       renderGallery(data.hits);
-      SimpleLightbox = new SimpleLightbox('.gallery a').refresh();
+      new SimpleLightbox('.gallery a').refresh();
 
       const totalPages = Math.ceil(data.totalHits / per_page);
 
