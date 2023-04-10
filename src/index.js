@@ -34,7 +34,7 @@ function onSearchForm(e) {
         alertNoImagesFound();
       } else {
         renderGallery(data.hits);
-        simpleLightBox = new SimpleLightbox('.gallery a').refresh();
+        SimpleLightbox = new SimpleLightbox('.gallery a').refresh();
         alertImagesFound(data);
 
         if (data.totalHits > per_page) {
@@ -50,12 +50,12 @@ function onSearchForm(e) {
 
 function onLoadMoreBtn() {
   page += 1;
-  simpleLightBox.destroy();
+  SimpleLightbox.destroy();
 
   fetchImages(query, page, per_page)
     .then(({ data }) => {
       renderGallery(data.hits);
-      simpleLightBox = new SimpleLightbox('.gallery a').refresh();
+      SimpleLightbox = new SimpleLightbox('.gallery a').refresh();
 
       const totalPages = Math.ceil(data.totalHits / per_page);
 
