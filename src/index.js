@@ -34,7 +34,7 @@ function onSearchForm(e) {
         alertNoImagesFound();
       } else {
         renderGallery(data.hits);
-        SimpleLightbox = new SimpleLightbox('.gallery a').refresh();
+        new SimpleLightbox('.gallery a').refresh();
         alertImagesFound(data);
 
         if (data.totalHits > per_page) {
