@@ -11,6 +11,7 @@ const loadMoreBtn = document.querySelector('.load-more');
 
 const per_page = 40;
 let query = '';
+let page = 1;
 
 searchForm.addEventListener('submit', onSearchForm);
 loadMoreBtn.addEventListener('click', onLoadMoreBtn);
