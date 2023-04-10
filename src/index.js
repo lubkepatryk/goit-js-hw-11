@@ -1,7 +1,7 @@
 import './sass/index.css';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
+// import 'simplelightbox/dist/simple-lightbox.min.css';
 import { fetchImages } from './js/fetch-images';
 import { renderGallery } from './js/render-gallery';
 
