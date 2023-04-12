@@ -15,6 +15,8 @@ let page = 1;
 
 searchForm.addEventListener('submit', onSearchForm);
 loadMoreBtn.addEventListener('click', onLoadMoreBtn);
+const lightbox = new SimpleLightbox('.gallery a');
+
 
 function onSearchForm(e) {
   e.preventDefault();
@@ -34,7 +36,7 @@ function onSearchForm(e) {
         alertNoImagesFound();
       } else {
         renderGallery(data.hits);
-        new SimpleLightbox('.gallery a').refresh();
+        lightbox.refresh();
         alertImagesFound(data);
 
         if (data.totalHits > per_page) {
@@ -54,7 +56,7 @@ function onLoadMoreBtn() {
   fetchImages(query, page, per_page)
     .then(({ data }) => {
       renderGallery(data.hits);
-      new SimpleLightbox('.gallery a').refresh();
+      lightbox.refresh();
 
       const totalPages = Math.ceil(data.totalHits / per_page);
 
